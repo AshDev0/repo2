@@ -1,0 +1,47 @@
+<section class="learn-more">
+  <div class="main-container">
+    <div class="content">
+      <h2>{{ section.settings.heading2 }}</h2>
+      <p>{{ section.settings.desc }}</p>
+      <a href="{{ section.settings.url }}">{{ section.settings['learn-btn'] }}</a>
+    </div>
+  </div>
+</section>
+{% schema %}
+{
+  "name": "Learn More",
+  "settings": [
+    {
+      "id":"heading2",
+      "type":"text",
+      "label":"Main Title"
+    },
+    {
+     "id":"desc",
+      "type":"text",
+      "label":"Description"
+    },
+    {
+      "id":"learn-btn",
+      "type":"text",
+      "label":"Button Text"
+    },
+    {
+      "id":"url",
+      "type":"url",
+      "label":"Learn More"
+    }
+  ],
+  "presets": [
+  {
+    "name": "Learn More"
+  }
+]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

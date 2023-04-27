@@ -1,0 +1,48 @@
+<section id="bestSeller-section--{{ section.id }}" class="bestSeller-section">
+  <div class="products">
+    <img src="{{ section.blocks.image | image_url:'master' }}" />
+    <div class="product-text">
+      <p class="title">{{  }}</p>
+      <p class="price">{{  }}</p>
+    </div>
+    <p class="desc">{{  }}</p>
+  </div>
+  
+</section>
+{% schema %}
+    {
+    "name": "BestSeller Section",
+    "settings": [
+    ],
+    "blocks": [
+     {
+       "name": "Bestseller",
+       "type": "gallery",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type": "text",
+           "id": "title",
+           "label": "Title"
+         },
+         {
+           "type": "text",
+           "id": "price",
+           "label": "Price"
+         }
+       ]
+     }
+  ],
+    "presets": [
+    {
+      "name": "BestSeller Section",
+      "settings": {
+      }
+    }
+  ]
+  }
+{% endschema %}

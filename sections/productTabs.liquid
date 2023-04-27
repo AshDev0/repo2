@@ -1,0 +1,43 @@
+<section>
+  <div class="easytabs-holder">
+    <ul class="easytabs-tabs">
+      <li class="easytabs-tab-item tab-item-active" data-tab="1">
+        <span class="easytabs-header-text">Description</span>
+      </li>
+      <li class="easytabs-tab-item" data-tab="2">
+        <span class="easytabs-header-text">Shipping</span>
+      </li>
+      <li class="easytabs-tab-item" data-tab="3">
+        <span class="easytabs-header-text">Furniture Guide</span>
+      </li>
+    </ul>
+    <div class="easytabs-contents">
+      <div class="easytabs-content-item content-item-active" data-tab="1">
+        <h2>Description</h2>
+        <p>{{ product.metafields.custom.features }}</p>
+      </div>
+      <div class="easytabs-content-item" data-tab="2">
+        <h2>Shipping</h2>
+        {{ product.metafields.custom.shipping }}
+        {{ product.metafields.custom.shipping }}
+        {{ product.metafields.custom.shipping }}
+      </div>
+      <div class="easytabs-content-item" data-tab="3">
+        <h2>Furniture Guide</h2>
+        <p>{{ product.metafields.custom.specification }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Easy Tabs",
+  "settings": [],
+  "presets": [
+    {
+    "name": "Easy Tabs"
+  }
+  ]
+}
+{% endschema %}

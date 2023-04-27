@@ -1,0 +1,37 @@
+{% assign collection_main = collections[section.settings.collection] %}
+<div class="featured__slider">
+  <h2>Related Products</h2>
+  <div class="featured__slider__row ">
+    {% for product in collection_main.products %}
+      <div class="featured__slider__items" data-img="{{ product.metafields.custom.fullslider_desc }}">
+        <img src="{{ product | img_url:"master" }}">
+
+        <p>{{ product.title }}</p>
+        <p>{{ product.price | money_with_currency }}</p>
+      </div>
+    {% endfor %}
+  </div>
+</div>
+{% schema %}
+  {
+  "name": "Featured Slider",
+  "settings": [
+    {
+      "id": "heading",
+      "type": "text",
+      "label": "Heading"
+    },
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Choose Collections"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Featured Slider",
+      "category": "SlideShow"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,57 @@
+<section id="banner-section--{{ section.id }}" class="banner-banner">
+<div class="custom-banner-section">
+ {%- if section.settings.banner != blank -%}
+              <img src="{{ section.settings.banner | img_url: 'master' }}"
+            alt="{{ section.settings.banner.alt | escape }}"
+            loading="lazy"
+          >
+            {% endif %}
+  <h1>{{ section.settings.heading1 }}</h1>
+  <p>{{ section.settings.description }}}</p>
+  <a href="{{ section.settings.url | image_url  }}}"></a>
+</div>
+</section>
+{% schema %}
+  {
+  "name": "New Banner",
+  "settings": [
+    {
+      "id": "banner",
+      "type": "image_picker",
+      "label": "Slide 1"
+    },
+    {
+      "id": "heading1",
+      "type": "text",
+      "label": "Heading 1"
+    },
+    {
+      "id": "description",
+      "type": "richtext",
+      "label": "Product description"
+    },
+    {
+      "id": "url",
+      "type": "url",
+      "label": "Product Url"
+    },
+    {
+      "id": "btn",
+      "type": "text",
+      "label": "View More"
+    }
+  ],
+  "presets": [
+    {
+      "name": "New Banner",
+      "category": "SlideShow"
+    }
+  ]
+}
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

@@ -1,0 +1,44 @@
+<section id="banner-section--{{ section.id }}" class="main-banner">
+  {%- if section.settings.main-image != blank -%}
+              <img src="{{ section.settings.main-image | img_url: 'master' }}"
+            alt="{{ section.settings.main-image.alt | escape }}"
+            loading="lazy"
+          >
+            {% endif %}
+  <h1>{{ section.settings.heading }}</h1>
+  <a href="#">{{ section.settings.banner-btn }}</a>
+</section>
+
+{% schema %}
+  {
+    "name": "Main Banner",
+      "settings": [
+        {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading"
+        },
+        {
+          "id": "main-image",
+          "type": "image_picker",
+          "label": "Main Slide"
+        },
+        {
+          "id": "banner-btn",
+          "type":"text",
+          "label": "learn more"
+        },
+        {
+          "id": "url",
+          "type": "url",
+          "label": "Product Url"
+    }
+    ],
+    "presets": [
+    {
+      "name": "Main Banner",
+      "category": "SlideShow"
+    }
+    ]
+  }
+{% endschema %}

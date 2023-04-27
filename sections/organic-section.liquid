@@ -1,0 +1,93 @@
+<section id="organic-section--{{ section.id }}" class="organic-section">
+  <ul>
+    <li>Organic</li>
+    <li>Safe</li>
+    <li>Comfy</li>
+  </ul>
+  <h2>{{ section.settings.heading }}</h2>
+  <div class="slide-block-grid">
+    {% for block in section.blocks %}
+  <div class="slide-block">
+      {% if block.settings.image != blank %}
+    <div class="slide-block-img">
+        <img src="{{ block.settings.image | img_url:'master' }}" />
+    </div>
+     {% endif %}
+    <div class="slide-block-text">
+      <div class="small-text">{{ block.settings.head6 }}</div>
+      <h3>{{ block.settings.head2 }}</h3>
+      <p>{{ block.settings.desc }}</p>
+      <a href="#">{{ block.settings.browse-btn }}</a>
+    </div>
+  </div>
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+    {
+    "name": "Organic Section",
+    "settings": [
+      {
+          "id": "heading",
+          "type": "text",
+          "label": "Heading"
+        },
+      {
+        "id": "subnav",
+        "type": "text",
+        "label": "Sub Nav"
+      }
+    ],
+    "blocks": [
+     {
+       "name": "Slide",
+       "type": "slide",
+       "settings": [
+         {
+           "type": "image_picker",
+           "id": "image",
+           "label": "Image"
+         },
+         {
+           "type": "text",
+           "id": "head6",
+           "label": "Heading 6"
+         },
+         {
+           "type": "text",
+           "id": "head2",
+           "label": "Heading 2"
+         },
+         {
+           "type": "text",
+           "id": "desc",
+           "label": "description"
+         },
+         {
+          "id": "browse-btn",
+          "type":"text",
+          "label": "Browse Now"
+        },
+         {
+           "type": "url",
+           "id": "url",
+           "label": "Browse"
+         }
+       ]
+     }
+  ],
+    "presets": [
+    {
+      "name": "Organic Section",
+      "settings": {
+      }
+    }
+  ]
+  }
+{% endschema %}
+
+{% stylesheet %}
+{% endstylesheet %}
+
+{% javascript %}
+{% endjavascript %}

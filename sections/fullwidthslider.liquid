@@ -1,0 +1,38 @@
+<section id="fullwidthslider-section--{{ section.id }}" class="fullwidthslider-section">
+  {% assign collection_main = collections[section.settings.collection] %}
+  <div class="slide-block-grid">
+    {% for product in collection_main.products %}
+      {% if product.metafields.custom.fullslider_img != blank %}
+        <div class="slide-block">
+          <div class="slide-block-img">
+            <img src="{{ product.metafields.custom.fullslider_img | img_url:'master' }}">
+          </div>
+          <div class="slide-block-text">
+            <div class="small-text">{{ product.metafields.custom.fullslider_smlhead }}</div>
+            <h3>{{ product.metafields.custom.fullslider_mainhead }}</h3>
+            <p>{{ product.metafields.custom.fullslider_desc }}</p>
+          </div>
+        </div>
+      {% endif %}
+    {% endfor %}
+  </div>
+</section>
+{% schema %}
+  {
+  "name": "Fullwidthslider Section",
+  "settings": [
+    {
+      "id": "collection",
+      "type": "collection",
+      "label": "Choose Collections"
+    }
+  ],
+  "presets": [
+  {
+    "name": "Fullwidthslider Section",
+    "settings": {
+    }
+  }
+]
+}
+{% endschema %}
